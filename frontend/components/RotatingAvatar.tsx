@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
-import { useTheme } from 'next-themes'
 
 interface AvatarProps {
   images: string[]
@@ -12,7 +11,6 @@ interface AvatarProps {
 export default function RotatingAvatar({ images, interval = 10000 }: AvatarProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const { theme } = useTheme()
 
   const goToNextImage = useCallback(() => {
     setIsTransitioning(true)
@@ -30,32 +28,30 @@ export default function RotatingAvatar({ images, interval = 10000 }: AvatarProps
     return () => clearInterval(timer)
   }, [goToNextImage, interval])
 
-  const borderColor = theme === 'dark' ? 'rgb(55, 65, 81)' : 'rgb(209, 213, 219)'
-
   return (
     <div className="relative w-full flex justify-center">
       <div className="relative" style={{ width: '456px', height: '256px' }}>
         {/* Container for rectangle and right triangle */}
-        <div className="absolute bottom-0 flex items-end gap-0" style={{ width: '456px' }}>
-          {/* Rectangle */}
-          <div className="bg-gray-300 dark:bg-gray-700" style={{ width: '256px', height: '128px' }}></div>
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-0">
+          <div className="flex items-end gap-0" style={{ transform: 'translateX(0px)' }}>
+            {/* Right triangle (facing right, right angle at bottom-left) */}
+            <div className="w-0 h-0 border-solid border-b-[128px] border-l-[200px] border-b-gray-300 dark:border-b-gray-700 border-l-transparent"></div>
 
-          {/* Right triangle (facing right, right angle at bottom-left) */}
-          <div
-            style={{
-              width: '0',
-              height: '0',
-              borderStyle: 'solid',
-              borderWidth: '0 0 128px 200px',
-              borderColor: `transparent transparent ${borderColor} transparent`,
-            }}
-          ></div>
+            {/* Rectangle */}
+            <div
+              className="bg-gray-300 dark:bg-gray-700"
+              style={{ width: '256px', height: '128px' }}
+            ></div>
+
+            {/* Left triangle (mirrored on Y-axis, right angle at bottom-right) */}
+            <div className="w-0 h-0 border-solid border-b-[128px] border-r-[200px] border-b-gray-300 dark:border-b-gray-700 border-r-transparent"></div>
+          </div>
         </div>
 
         {/* Avatar circle */}
         <div
           onClick={goToNextImage}
-          className="relative rounded-full overflow-hidden border-8 border-gray-300 dark:border-gray-700 cursor-pointer z-10"
+          className="relative rounded-full overflow-hidden border-8 border-gray-300 dark:border-gray-700 bg-gray-300 dark:bg-gray-700 cursor-pointer z-10"
           style={{ width: '256px', height: '256px', margin: '0 auto' }}
         >
       <div className="relative w-full h-full">
