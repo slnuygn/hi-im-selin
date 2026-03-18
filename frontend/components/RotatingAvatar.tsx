@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useId } from 'react'
 import Image from 'next/image'
 
 interface AvatarProps {
@@ -11,6 +11,8 @@ interface AvatarProps {
 export default function RotatingAvatar({ images, interval = 10000 }: AvatarProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const rightTriangleMaskId = useId().replace(/:/g, '')
+  const leftTriangleMaskId = useId().replace(/:/g, '')
 
   const goToNextImage = useCallback(() => {
     setIsTransitioning(true)
@@ -35,7 +37,25 @@ export default function RotatingAvatar({ images, interval = 10000 }: AvatarProps
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-0">
           <div className="flex items-end gap-0" style={{ transform: 'translateX(0px)' }}>
             {/* Right triangle (facing right, right angle at bottom-left) */}
-            <div className="w-0 h-0 border-solid border-b-[128px] border-l-[200px] border-b-gray-300 dark:border-b-gray-700 border-l-transparent"></div>
+            <div className="relative" style={{ width: '200px', height: '128px' }}>
+              <svg
+                viewBox="0 0 200 128"
+                className="absolute inset-0 h-full w-full text-gray-300 dark:text-gray-700"
+                aria-hidden="true"
+              >
+                <defs>
+                  <mask id={`${rightTriangleMaskId}-cutout`}>
+                    <rect x="0" y="0" width="200" height="128" fill="white" />
+                    <circle cx="27" cy="-50" r="180" fill="black" />
+                  </mask>
+                </defs>
+                <polygon
+                  points="0,128 200,128 200,0"
+                  fill="currentColor"
+                  mask={`url(#${rightTriangleMaskId}-cutout)`}
+                />
+              </svg>
+            </div>
 
             {/* Rectangle */}
             <div
@@ -44,7 +64,25 @@ export default function RotatingAvatar({ images, interval = 10000 }: AvatarProps
             ></div>
 
             {/* Left triangle (mirrored on Y-axis, right angle at bottom-right) */}
-            <div className="w-0 h-0 border-solid border-b-[128px] border-r-[200px] border-b-gray-300 dark:border-b-gray-700 border-r-transparent"></div>
+            <div className="relative" style={{ width: '200px', height: '128px' }}>
+              <svg
+                viewBox="0 0 200 128"
+                className="absolute inset-0 h-full w-full text-gray-300 dark:text-gray-700"
+                aria-hidden="true"
+              >
+                <defs>
+                  <mask id={`${leftTriangleMaskId}-cutout`}>
+                    <rect x="0" y="0" width="200" height="128" fill="white" />
+                    <circle cx="173" cy="-50" r="180" fill="black" />
+                  </mask>
+                </defs>
+                <polygon
+                  points="0,128 200,128 0,0"
+                  fill="currentColor"
+                  mask={`url(#${leftTriangleMaskId}-cutout)`}
+                />
+              </svg>
+            </div>
           </div>
         </div>
 
