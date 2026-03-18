@@ -30,10 +30,10 @@ export default function RotatingAvatar({ images, interval = 10000 }: AvatarProps
   return (
     <div className="relative w-full flex justify-center">
       {/* Phone and tablet: remove geometric shapes */}
-      <div className="xl:hidden w-full max-w-sm px-4">
+      <div className="xl:hidden w-full">
         <div
           onClick={goToNextImage}
-          className="relative h-72 w-full overflow-hidden rounded-2xl border-2 border-gray-700 bg-gray-700 cursor-pointer"
+          className="relative w-1/2 aspect-square overflow-hidden rounded-full border-2 border-gray-700 bg-gray-700 cursor-pointer mx-auto"
         >
           {images.map((img, idx) => {
             const isCurrentImage = idx === currentIndex
@@ -65,13 +65,11 @@ export default function RotatingAvatar({ images, interval = 10000 }: AvatarProps
           })}
         </div>
 
-        <div className="mt-4 text-gray-300">
+        <div className="mt-2 mb-8 text-gray-300 text-center">
           <div className="text-3xl font-bold leading-tight">
-            Selin
-            <br />
-            Uygun
+            Selin Uygun
           </div>
-          <div className="mt-2 text-lg font-medium leading-tight">Junior Software Engineer</div>
+          <div className="mt-2 text-xl font-medium leading-tight">Junior Software Engineer</div>
         </div>
       </div>
 
@@ -140,7 +138,7 @@ export default function RotatingAvatar({ images, interval = 10000 }: AvatarProps
         {/* Avatar circle */}
         <div
           onClick={goToNextImage}
-          className="relative rounded-full overflow-hidden border-8 border-gray-300 dark:border-gray-700 bg-gray-300 dark:bg-gray-700 cursor-pointer z-10"
+          className="relative rounded-full overflow-hidden border-4 border-gray-300 dark:border-gray-700 bg-gray-300 dark:bg-gray-700 cursor-pointer z-10"
           style={{ width: '256px', height: '256px', margin: '0 auto' }}
         >
           <div className="relative w-full h-full">
