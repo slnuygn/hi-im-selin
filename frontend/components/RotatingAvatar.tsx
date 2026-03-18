@@ -2,9 +2,10 @@
 
 import { useState, useEffect, useCallback, useId } from 'react'
 import Image from 'next/image'
+import type { StaticImageData } from 'next/image'
 
 interface AvatarProps {
-  images: string[]
+  images: Array<string | StaticImageData>
   interval?: number
 }
 

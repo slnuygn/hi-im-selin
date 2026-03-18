@@ -3,6 +3,9 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 import RotatingAvatar from '@/components/RotatingAvatar'
 import Card from '@/components/Card'
+import profile1 from '@/assets/profile/1.jpeg'
+import profile2 from '@/assets/profile/2.jpeg'
+import profile3 from '@/assets/profile/3.jpeg'
 
 export default function Home() {
   const timelineContainerRef = useRef<HTMLDivElement>(null)
@@ -110,11 +113,7 @@ export default function Home() {
     }
   }, [renderedTimelineCards.length])
 
-  const avatarImages = [
-    '/assets/profile/1.jpeg',
-    '/assets/profile/2.jpeg',
-    '/assets/profile/3.jpeg',
-  ]
+  const avatarImages = [profile1, profile2, profile3]
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start p-4 xl:p-24">
