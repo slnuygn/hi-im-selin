@@ -53,7 +53,7 @@ export default function Home() {
     {
       title: 'EEG Old vs Young Classification And Analysis',
       content: 'Preprocessed and analyzed EEG data of young and old subjects, extracted features and built machine learning pipelines to classify the two groups with high accuracy. Implemented a web dashboard for visualizing the results and insights from the analysis.',
-      techStack: 'MATLAB, Fieldtrip, Python, scikit-Learn, Flask',
+      techStack: 'MATLAB, Fieldtrip, Python, PyTorch, Flask',
     },
     {
       title: 'Huddle: School Communities App',
