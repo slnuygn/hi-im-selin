@@ -31,7 +31,7 @@ export default function Home() {
       techStack: 'MySQL, Relational Database Design',
     },
     {
-      title: 'ERP Workflow And Document Management Internship',
+      title: 'ERP Workflow And Document Management Internship at Aksoy Cozum',
       content: 'Gained experience in ERP workflow optimization and successfully implemented document management processes and workflows using the eBA software system and SQL Server Management Studio.',
       techStack: 'eBA Document & Workflow Management system, SQL Server Management Studio',
     },
@@ -44,6 +44,16 @@ export default function Home() {
       title: 'Unity 2D Platformer',
       content: 'Designed the assets, character animations, and added gameplay mechanics for a 2D platformer game using Unity and C#.',
       techStack: 'Unity, C#, 2D Game Design, Animation',
+    },
+    {
+      title: 'Web Frontend Development Internship at Virtus Arge',
+      content: 'Participated in a team and helped develop the frontend of a learning management system web application, implemented UI components and integrated them with backend APIs, tested application and requests with Docker and Postman, while actively using version control tools.',
+      techStack: 'React, Tailwind CSS, JavaScript, HTML, CSS, Postman, Docker, Git',
+    },
+    {
+      title: 'EEG Old vs Young Classification And Analysis',
+      content: 'Preprocessed and analyzed EEG data of young and old subjects, extracted features and built machine learning pipelines to classify the two groups with high accuracy. Implemented a web dashboard for visualizing the results and insights from the analysis.',
+      techStack: 'MATLAB, Fieldtrip, Python, scikit-Learn, Flask',
     },
     {
       title: 'Huddle: School Communities App',
