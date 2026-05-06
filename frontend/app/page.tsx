@@ -256,7 +256,7 @@ export default function Home() {
               Like any other lost teenager, I didn’t know who I was, what I wanted from life and what I could contribute to it for a very long time. This was still the case when I signed up for the software engineering program in my university. I was familiar with the very basics of how to use a computer, but I was neither familiar with developing software nor applying engineering methodologies to it. I classified everything unfamiliar I saw as “hard”, and not “unfamiliar”.
             </p>
             <p className="mt-6">
-              But when I started learning, even when it was absolutely necessary because I was failing multiple classes for the 3rd time, I realized that I was way more than what I thought I was, and I started getting straight A’s as an accomplishment of my hard work.
+              But when I started learning, even when it was absolutely necessary because I was failing multiple classes for the 3rd time, I realized that I was way more than what I thought I was, and I started getting straight A’s as a result of my hard work.
             </p>
             <p className="mt-6">
               To further reinforce my love for learning, I pursued extracurricular activities such as learning to code and build Arduino projects by myself, I even tried to form a robotics club at some point and as a result I formed unforgettable memories and invaluable friendships.
