@@ -72,7 +72,7 @@ export default function Home() {
     },
     {
       title: 'Web-Based Learning Management System',
-      content: 'Currently developing a web-based learning management system, using a microservices architecture. Planning to stress-test it on a local Kubernetes cluster using Minikube to validate scalability and resilience before production-style deployment.',
+      content: 'Currently developing a web-based learning management system, using a service-oriented architecture. Planning to stress-test it on a local Kubernetes cluster using Minikube to validate scalability and resilience before production-style deployment.',
       techStack: 'TypeScript, Node.js, NestJS, PostgreSQL, Redis, RabbitMQ, Prisma, Docker, Next.js, Kubernetes',
     },
   ].reverse()
@@ -124,16 +124,28 @@ export default function Home() {
   }, [renderedTimelineCards.length])
 
   const avatarImages = [profile1, profile2, profile3]
+  const ribbonLabels = ['Timeline', 'Gallery', 'Info & Contact', 'Who Am I?', 'Extras']
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start p-4 xl:p-24">
+      <div className="fixed left-0 top-6 z-50 flex flex-col gap-1.5">
+        {ribbonLabels.map((label, index) => (
+          <div key={`${label}-${index}`} className="group relative h-12 overflow-visible transition-all duration-300 ease-out w-36 hover:w-52">
+            <div className="flex h-full w-full items-center justify-start overflow-hidden rounded-r-full bg-stone-600 px-5 pr-10 text-base font-semibold text-stone-100 shadow-lg transition-all duration-300 ease-out group-hover:justify-center group-hover:bg-stone-500 dark:bg-stone-700 dark:text-stone-50 dark:group-hover:bg-stone-600">
+              <span className="whitespace-nowrap transition-all duration-300 ease-out group-hover:text-lg group-hover:tracking-wide">
+                {label}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
       <RotatingAvatar images={avatarImages} interval={10000} />
       <div className="w-full max-w-6xl flex flex-col items-center">
         <div className="bg-gradient-to-b from-gray-300 to-gray-800 dark:from-gray-700 dark:to-gray-900 rounded-lg p-12 shadow-lg w-full flex flex-col gap-8 relative">
           <div ref={timelineContainerRef} className="relative flex flex-col gap-2">
             {/* Center timeline line */}
             <div
-              className="absolute left-1/2 w-1 bg-white -translate-x-1/2"
+              className="absolute left-1/2 z-10 w-px -translate-x-1/2 bg-gray-900 dark:bg-gray-100"
               style={{ top: `${lineStyle.top}px`, height: `${lineStyle.height}px` }}
             ></div>
 
@@ -155,13 +167,13 @@ export default function Home() {
                 >
                   {isLeft ? (
                     <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 ml-2 hidden md:flex items-center">
-                      <div className="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-                      <div className="h-0.5 w-12 bg-white"></div>
+                      <div className="h-3 w-3 rounded-full border-2 border-gray-900 bg-transparent dark:border-gray-100"></div>
+                      <div className="h-0.5 w-12 bg-gray-900 dark:bg-gray-100"></div>
                     </div>
                   ) : (
                     <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -ml-2 hidden md:flex items-center">
-                      <div className="h-0.5 w-12 bg-white"></div>
-                      <div className="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
+                      <div className="h-0.5 w-12 bg-gray-900 dark:bg-gray-100"></div>
+                      <div className="h-3 w-3 rounded-full border-2 border-gray-900 bg-transparent dark:border-gray-100"></div>
                     </div>
                   )}
 
