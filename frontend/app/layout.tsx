@@ -4,7 +4,7 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 import SocialFooter from '@/components/SocialFooter'
 
 export const metadata: Metadata = {
-  title: 'My Portfolio',
+  title: 'Hi I\'m Selin!',
   description: 'Personal portfolio website',
 }
 

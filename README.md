@@ -1,9 +1,26 @@
-Strict tech stack requirements for this portfolio:
+Hi — I'm Selin
 
-The "Full Stack JavaScript/TypeScript" Path
+A simple personal website built with Next.js and Tailwind CSS.
 
-    Frontend: React.js (Next.js framework)
+Quick start
 
-    Backend: Node.js (NestJS or Express)
+- Open the frontend folder and install dependencies:
 
-    Language: TypeScript (Strict typing is crucial for Data Structures/Algorithms)
+```bash
+cd frontend
+npm install
+```
+
+- Run the development server:
+
+```bash
+npm run dev
+```
+
+Structure
+
+- `frontend/` — Next.js app (app directory, components, assets)
+- `components/` — shared React components
+- `public/` — static assets
+
+If you'd like changes or a longer README, tell me what to include.
