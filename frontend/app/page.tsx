@@ -14,7 +14,7 @@ export default function Home() {
   const bottomRowRef = useRef<HTMLDivElement>(null)
   const [lineStyle, setLineStyle] = useState<{ top: number; height: number }>({ top: 0, height: 0 })
   const [activeSection, setActiveSection] = useState('Timeline')
-  const [selectedExtraTopics, setSelectedExtraTopics] = useState<string[]>([])
+  const [selectedExtraTopics, setSelectedExtraTopics] = useState<string[]>(['Differential Equations', 'Calculus I'])
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -253,7 +253,7 @@ export default function Home() {
         <div className="flex min-h-[65vh] w-full items-center justify-center px-4 py-8 text-white">
           <div className="max-w-3xl text-left text-base leading-8 text-white/85 md:text-lg md:leading-9">
             <p>
-              Like any other lost teenager, I didn’t know who I was, what I wanted from life and what I could contribute to it for a very long time. This was still the case when I signed up for the software engineering program in my university. I was familiar with the very basics of how to use a computer, but I was neither familiar with developing software nor applying engineering methodologies to it. I classified everything unfamiliar I saw as “hard”, and not “unfamiliar”.
+              Like most teenagers, I didn’t know who I was, what I wanted from life and what I could contribute to it for a very long time. This was still the case when I signed up for the software engineering program in my university. I was familiar with the very basics of how to use a computer, but I was neither familiar with developing software nor applying engineering methodologies to it. I classified everything unfamiliar I saw as “hard”, and not “unfamiliar”.
             </p>
             <p className="mt-6">
               But when I started learning, even when it was absolutely necessary because I was failing multiple classes for the 3rd time, I realized that I was way more than what I thought I was, and I started getting straight A’s as a result of my hard work.
@@ -262,10 +262,10 @@ export default function Home() {
               To further reinforce my love for learning, I pursued extracurricular activities such as learning to code and build Arduino projects by myself, I even tried to form a robotics club at some point and as a result I formed unforgettable memories and invaluable friendships.
             </p>
             <p className="mt-6">
-              But I wasn’t done with extracurricular education yet, when my lovely teacher who then later also became my advisor on my senior capstone project, Assoc. Prof. Emine Elif Tülay, introduced me to and taught me such an underappreciated and cool topic as neuroscience. It was the perfect opportunity to incorporate my new knowledge of data science, brain signal processing and software engineering skills to conceive my senior capstone project.
+              But I wasn’t done with extracurricular education yet, when my teacher who then later also became my advisor on my senior capstone project, introduced me to and taught me such an underappreciated and cool topic as neuroscience. It was the perfect opportunity to incorporate my new knowledge of data science, brain signal processing and software engineering skills to conceive my senior capstone project.
             </p>
             <p className='mt-6'>
-               Every day I'm looking for new challenges and opportunities, finding new ideas and building projects to learn new languages and tools, and still reading software engineering books we were taught at college.
+              Every day I&apos;m looking for new challenges and opportunities, finding new ideas and building projects to learn new languages and tools, and still reading software engineering books we were taught at college.
             </p>
             <p className="mt-6">
               In summary, after a lot of existential crises, hard work, grief and a lot of journaling, I started seeing me for me, what my values and traits were and are. This is still an ongoing process, and I hope it never ends. The further I proceed the further I reinforce and rebuild my values as a person and my love for my profession.
