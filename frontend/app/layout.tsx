@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import SocialFooter from '@/components/SocialFooter'
 
 export const metadata: Metadata = {
   title: 'My Portfolio',
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body className="min-h-screen">
         <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
           {children}
+          <SocialFooter />
         </ThemeProvider>
       </body>
     </html>
